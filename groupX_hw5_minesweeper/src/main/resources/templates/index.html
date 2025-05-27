@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Minesweeper Game</title>
+	<style>
+	        body {
+	            text-align: center;
+	            font-family: Arial, sans-serif;
+	        }
+
+	        .intro {
+	            margin-bottom: 30px;
+	        }
+
+	        .game-section {
+	            display: flex;
+	            flex-direction: column;
+	            align-items: center;
+	        }
+
+	        .difficulty-buttons {
+	            display: flex;
+	            flex-direction: column;
+	            gap: 10px; /* space between buttons */
+	            margin-top: 10px;
+				
+	        }
+
+	        .difficulty-buttons button {
+	            padding: 10px 20px;
+	            font-size: 16px;
+	            cursor: pointer;
+				width: 200px;
+	        }
+	    </style>
+
+</head>
+<body style="text-align: center;">
+<h1>Welcome to Minesweeper!</h1>
+
+<div class="intro">
+    A Minesweeper web app developed by Carter Johnson, Nick Kelley, and Rayleigh Thai.
+</div>
+
+<div class="game-section">
+        <h3>Select your difficulty:</h3>
+        <div class="difficulty-buttons">
+            <form th:action="@{/game}" method="post">
+                <input type="hidden" name="difficulty" value="easy" />
+				<input type="hidden" name="rows" value="8" />
+			    <input type="hidden" name="cols" value="8" />
+			    <input type="hidden" name="mines" value="9" />
+                <button type="submit">Easy</button>
+            </form>
+            <form th:action="@{/game}" method="post">
+                <input type="hidden" name="difficulty" value="normal" />
+				<input type="hidden" name="rows" value="16" />
+			    <input type="hidden" name="cols" value="16" />
+			    <input type="hidden" name="mines" value="40" />
+                <button type="submit">Normal</button>
+            </form>
+            <form th:action="@{/game}" method="post">
+                <input type="hidden" name="difficulty" value="hard" />
+				<input type="hidden" name="rows" value="16" />
+			    <input type="hidden" name="cols" value="30" />
+			    <input type="hidden" name="mines" value="99" />
+                <button type="submit">Hard</button>
+            </form>
+            <form th:action="@{/game}" method="post">
+                <input type="hidden" name="difficulty" value="extreme" />
+				<input type="hidden" name="rows" value="24" />
+			    <input type="hidden" name="cols" value="30" />
+			    <input type="hidden" name="mines" value="180" />
+                <button type="submit">Extreme</button>
+            </form>
+        </div>
+    </div>
+
+<br><br>
+
+<p>Game interface will appear here on start.</p>
+
+</body>
+</html>
