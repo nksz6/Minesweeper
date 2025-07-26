@@ -1,4 +1,4 @@
-##Minesweeper
+Minesweeper
 
 ![Minesweeper screenshot of home.](assets/Minesweeper-home-sc.png)
 
